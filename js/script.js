@@ -135,6 +135,11 @@ function registervalidate() {
         isOk = false;
     }
 
+    if(isOk)
+    {
+        alert('Registration was Successful, Please Login');
+    }
+
     return isOk;
 }
 
