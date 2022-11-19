@@ -167,7 +167,7 @@ function CheckPasswordStrength(password) {
     }
 
     //Validate for length of Password.
-    if (password.length > 8) {
+    if (password.length > 7) {
         passed = passed + 5;
     }
 
