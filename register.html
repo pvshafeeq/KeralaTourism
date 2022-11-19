@@ -67,7 +67,7 @@
         <!-- form starts -->
         <div class="col-sm-12 justify-content-center d-flex">
 
-          <form action="member.html" class="loginForm">
+          <form action="member.html" class="loginForm" onsubmit="return registervalidate();">
 
             <center>
               <h4 class="fw-normal mb-3 pb-3 text-secondary" style="letter-spacing: 1px;">Sign Up</h4>
@@ -78,19 +78,30 @@
             </div>
 
             <div class="form-outline mb-4">
-              <input type="email" id="email" class="form-control" placeholder="Email address" />
+              <input type="text" id="txtEmail" class="form-control" placeholder="Email address" />
+              <small id="errEmail"></small>
             </div>
 
             <div class="form-outline mb-4">
-              <input type="text" id="contact" class="form-control" placeholder="Contact No." />
+              <input type="text" id="txtcontact" class="form-control" placeholder="Contact No." data-toggle="tooltip"
+                data-placement="top"
+                title="Should contain 10 digit in any of formats: XXX-XXX-XXXX, XXX.XXX.XXXX, XXX XXX XXXX" />
+              <small id="errContact"></small>
             </div>
 
             <div class="form-outline mb-4">
-              <input type="password" id="password" class="form-control" placeholder="Password" />
+              <input type="password" id="txtPassword" class="form-control" onkeyup="CheckPasswordStrength(this.value)"
+                placeholder="Password" data-toggle="tooltip" data-placement="top"
+                title="Minimum 8 characters, at least one uppercase, and one lower case, must contain at least one number" />
+              <small id="errPwd"></small>
+              <h6 id="StrengthDisp" class="mt-1 text-center"><span class="badge"></span></h6>
             </div>
 
             <div class="form-outline mb-4">
-              <input type="password" id="retypePassword" class="form-control" placeholder="Retype Password" />
+              <input type="password" id="txtRetypePassword" class="form-control" placeholder="Re-type Password"
+                data-toggle="tooltip" data-placement="top"
+                title="Minimum 8 characters, at least one uppercase, and one lower case, must contain at least one number" />
+              <small id="errRetypePwd"></small>
             </div>
 
             <div class="pt-1 mb-4">
@@ -119,6 +130,7 @@
   </footer>
   <!-- Footer End -->
 
+  <script src="./js/script.js"></script>
 </body>
 
 </html>

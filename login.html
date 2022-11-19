@@ -65,20 +65,25 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-12 justify-content-center d-flex">
-          <form action="member.html" class="loginForm">
+          <form action="member.html" class="loginForm" onsubmit="return loginvalidate();">
             <center>
               <h4 class="fw-normal mb-3 pb-3 text-white" style="letter-spacing: 1px;">Log In</h4>
             </center>
             <div class="form-outline mb-4">
-              <input type="email" id="form2Example18" class="form-control" placeholder="Email address" />
+              <input type="text" id="txtEmail" class="form-control" placeholder="Email address" />
+              <small id="errEmail"></small>
             </div>
 
             <div class="form-outline mb-4">
-              <input type="password" id="form2Example28" class="form-control" placeholder="Password" />
+              <input type="password" id="txtPassword" class="form-control" placeholder="Password"
+                onkeyup="CheckPasswordStrength(this.value)" />
+              <h6 id="StrengthDisp" class="mt-1 text-center"><span class="badge"></span></h6>
+              <small id="errPwd"></small>
             </div>
 
             <div class="pt-1 mb-4">
               <button class="btn btn-secondary btn-block" type="submit">Login</button>
+              <!-- <input type="submit" class="btn btn-secondary btn-block" value="Login" onclick="validate();"> -->
             </div>
 
             <center>
@@ -99,7 +104,7 @@
     </div>
   </footer>
   <!-- Footer End -->
-
+  <script src="./js/script.js"></script>
 </body>
 
 </html>
